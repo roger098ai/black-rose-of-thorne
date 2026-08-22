@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NSH | Dark Romance</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+<meta name="theme-color" content="#080808">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="loader">
+
+    <p id="loaderText">
+        checking access...
+    </p>
+
+</div>
+
+    <!-- INTRO SCREEN -->
+
+    <section id="intro">
+
+        <div class="intro-content">
+
+            <p class="small-text">NSH</p>
+
+            <h1>
+                You found it.
+            </h1>
+
+            <p class="intro-description">
+                Some stories are written to be read.
+                <br>
+                Others wait for the right person to find them.
+            </p>
+
+            <button id="enterBtn">
+                ENTER
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN WEBSITE -->
+
+    <main id="website" class="hidden">
+
+        <!-- NAV -->
+
+        <nav>
+
+            <div class="logo">
+                NSH
+            </div>
+
+            <div class="nav-links">
+
+                <a href="#black-rose">THE BLACK ROSE</a>
+
+                <a href="#stories">READ</a>
+
+                <a href="#author">AUTHOR</a>
+
+                <a href="#find-me">FIND ME</a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <p class="eyebrow">
+                A small corner of the internet for people with questionable taste in fictional men.
+            </p>
+
+            <h1>
+                Welcome.
+            </h1>
+
+            <p class="hero-text">
+
+                Stay for a minute.
+
+                <br><br>
+
+                Or don't.
+
+            </p>
+
+        </section>
+
+
+        <!-- THE BLACK ROSE -->
+
+        <section id="black-rose" class="book-section">
+
+            <div class="section-label">
+                COMING SOON
+            </div>
+
+            <h2>
+                The Black Rose<br>of Thorne
+            </h2>
+
+          <p
+    class="book-description"
+    id="bookDescription"
+>
+    Some doors stay locked for a reason.
+</p>
+
+            <!-- COVER -->
+
+            <div class="cover-container">
+
+                <div id="coverOverlay"></div>
+
+                <img
+                    src="images/black-rose-cover.png"
+                    alt="The Black Rose of Thorne"
+                    id="bookCover"
+                >
+
+            </div>
+
+
+            <!-- COUNTDOWN -->
+
+            <div class="countdown">
+
+                <div>
+                    <span id="days">00</span>
+                    <small>DAYS</small>
+                </div>
+
+                <div>
+                    <span id="hours">00</span>
+                    <small>HOURS</small>
+                </div>
+
+                <div>
+                    <span id="minutes">00</span>
+                    <small>MINUTES</small>
+                </div>
+
+                <div>
+                    <span id="seconds">00</span>
+                    <small>SECONDS</small>
+                </div>
+
+            </div>
+
+
+            <p id="accessMessage">
+
+                ACCESS DENIED.
+
+                <br>
+
+                <span>
+                    This story isn't yours yet.
+                </span>
+
+            </p>
+
+
+            <!-- WATTPAD BUTTON -->
+
+            <a
+                href="#"
+                id="wattpadBookBtn"
+                class="locked-btn"
+            >
+
+                🔒 ACCESS DENIED
+
+            </a>
+
+        </section>
+
+
+        <!-- STORIES -->
+
+        <section id="stories" class="stories-section">
+
+            <p class="section-label">
+                UNTIL SEPTEMBER 6...
+            </p>
+
+            <h2>
+                Read something else.
+            </h2>
+
+            <p class="section-intro">
+
+                I can't promise they'll prepare you for what's coming.
+
+            </p>
+
+
+            <div class="story-grid">
+
+
+                <!-- STORY 1 -->
+
+                <a href="https://www.wattpad.com/story/415188940-the-lab" target="_blank" class="story-card">
+
+                    <img src="images/story-1.png">
+
+                    <div class="story-info">
+
+                        <h3>
+                            THE LAB
+                        </h3>
+
+                <p>
+                        An experiment in love, obsession and bad decisions.
+                </p>
+
+                        <span>
+                            READ →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- STORY 2 -->
+
+                <a href="https://www.wattpad.com/story/415224249-shadows-of-obsession" target="_blank" class="story-card">
+
+                    <img src="images/story-2.png">
+
+                    <div class="story-info">
+
+                        <h3>
+                            SHADOWS OF OBSESSION
+                        </h3>
+                        <p>
+                            When obsession becomes a way of life.
+                        </p>
+
+                        <span>
+                            READ →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- STORY 3 -->
+
+                <a href="https://www.wattpad.com/story/415188285-the-yellow-poncho" target="_blank" class="story-card">
+
+                    <img src="images/story-3.png">
+
+                    <div class="story-info">
+
+                        <h3>
+                            THE YELLOW PONCHO
+                        </h3>
+
+                        <p>
+                            A simple jacket with a twist.
+                        </p>
+
+                        <span>
+                            READ →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- AUTHOR -->
+
+        <section id="author" class="author-section">
+
+            <p class="section-label">
+                ABOUT THE AUTHOR
+            </p>
+
+            <h2>
+                Hi. I'm NSH.
+            </h2>
+
+            <p>
+
+                I write dark romance because apparently giving fictional people healthy communication skills wasn't interesting enough.
+
+                <br><br>
+
+                Somewhere between obsession, bad decisions, secrets and characters that probably need therapy, I write stories.
+
+                <br><br>
+
+                No, I won't apologize for the fictional men.
+
+            </p>
+
+        </section>
+
+
+        <!-- READER MESSAGE -->
+
+        <section class="reader-section">
+
+            <p class="section-label">
+                READER STATUS
+            </p>
+
+            <div id="readerMessage">
+
+                You said one chapter.
+                <br>
+                That's what everyone says.
+
+            </div>
+
+        </section>
+
+
+        <!-- SOCIALS -->
+
+        <section id="find-me" class="social-section">
+
+            <p class="section-label">
+                FIND ME OUTSIDE THIS PLACE
+            </p>
+
+            <div class="social-links">
+
+                <a
+                    href="https://www.instagram.com/nosainthereee/"
+                    target="_blank"
+                >
+                    INSTAGRAM
+                    <span>
+                        chaos, updates and whatever happens there
+                    </span>
+                </a>
+
+
+                <a
+                    href="https://www.wattpad.com/user/nosaintheree"
+                    target="_blank"
+                >
+                    WATTPAD
+                    <span>
+                        where the actual damage is done
+                    </span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                You made it to the end.
+            </p>
+
+            <span>
+                That's usually when things start getting interesting.
+            </span>
+
+            <small>
+                © 2026 NSH — built because apparently writing books wasn't enough.
+            </small>
+
+            <!-- HIDDEN ROSE -->
+
+<div id="hiddenRose" class="hidden-rose">
+    🥀
+</div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- MYSTERIOUS POPUP -->
+
+    <div id="mysteryPopup">
+
+        <span id="popupText"></span>
+
+    </div>
+<!-- SECRET MESSAGE -->
+
+<div id="secretMessage" class="secret-message">
+
+    <p id="secretText"></p>
+
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

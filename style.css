@@ -1230,3 +1230,389 @@ footer small {
     }
 
 }
+
+/* =========================
+   CHARACTER REVEAL
+========================= */
+
+.characters-section {
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #120d0e 0%,
+            #080808 70%
+        );
+
+}
+
+
+.character-intro {
+
+    color: var(--gray);
+
+    margin-bottom: 40px;
+
+    font-size: 13px;
+}
+
+
+.character-countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+.character-countdown div {
+
+    min-width: 65px;
+}
+
+
+.character-countdown span {
+
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 45px;
+}
+
+
+.character-countdown small {
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: var(--gray);
+}
+
+
+.character-access {
+
+    color: var(--light-red);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 60px;
+}
+
+
+/* CHARACTER GRID */
+
+.character-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+}
+
+
+/* CARD */
+
+.character-card {
+
+    height: 520px;
+
+    perspective: 1200px;
+
+    cursor: pointer;
+
+}
+
+
+.character-card-inner {
+
+    width: 100%;
+
+    height: 100%;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.9s
+        cubic-bezier(.2,.75,.3,1);
+
+}
+
+
+.character-card.flipped
+.character-card-inner {
+
+    transform: rotateY(180deg);
+
+}
+
+
+.character-card-front,
+.character-card-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    backface-visibility: hidden;
+
+    overflow: hidden;
+
+    border: 1px solid #242424;
+
+}
+
+
+/* FRONT */
+
+.character-card-front {
+
+    background: #0b0b0b;
+
+}
+
+
+.character-card-front img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(0.6);
+
+    transition: 0.7s ease;
+
+}
+
+
+.character-card:hover img {
+
+    filter: brightness(0.85);
+
+    transform: scale(1.03);
+
+}
+
+
+.character-name {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    right: 0;
+
+    padding: 25px;
+
+    text-align: left;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.95)
+        );
+
+}
+
+
+.character-name span {
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: var(--light-red);
+}
+
+
+.character-name h3 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    margin-top: 8px;
+
+}
+
+
+/* BACK */
+
+.character-card-back {
+
+    background: #0d0b0b;
+
+    transform: rotateY(180deg);
+
+    padding: 30px 25px;
+
+    text-align: left;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.character-age {
+
+    color: var(--light-red);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+
+.character-card-back h3 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+
+.character-card-back p {
+
+    color: var(--gray);
+
+    font-size: 11px;
+
+    line-height: 1.65;
+
+}
+
+
+.character-card-back blockquote {
+
+    margin-top: auto;
+
+    padding-top: 20px;
+
+    color: var(--white);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 19px;
+
+    line-height: 1.1;
+
+    border-top: 1px solid #281316;
+
+}
+
+
+/* LOCKED STATE */
+
+.locked-characters {
+
+    pointer-events: none;
+
+}
+
+
+.locked-characters
+.character-card {
+
+    filter: grayscale(1);
+
+}
+
+
+.locked-characters
+.character-card-front img {
+
+    filter:
+        brightness(0.12)
+        blur(7px);
+
+}
+
+
+.locked-characters
+.character-name h3 {
+
+    opacity: 0;
+
+}
+
+
+.locked-characters
+.character-name::after {
+
+    content: "LOCKED";
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: #777;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 1100px) {
+
+    .character-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .character-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .character-card {
+
+        height: 500px;
+
+    }
+
+}

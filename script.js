@@ -1088,7 +1088,7 @@ window.addEventListener("load", () => {
 
         loader.classList.add("hide");
 
-    }, 400);
+    }, 10);
 
 });
 
@@ -1098,7 +1098,7 @@ setTimeout(() => {
         "loaderText"
     ).textContent = "access granted.";
 
-}, 400);
+}, 20);
 
 /* =========================
    SPOTIFY PLAYLIST REVEAL

@@ -186,7 +186,7 @@ function unlockBook() {
 
 
     button.href =
-        "YOUR_WATTPAD_BOOK_LINK";
+        "https://www.wattpad.com/myworks/414746391-the-black-rose-of-thorne";
 
 
     accessMessage.innerHTML = `

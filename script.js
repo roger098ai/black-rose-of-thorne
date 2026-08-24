@@ -1099,3 +1099,160 @@ setTimeout(() => {
     ).textContent = "access granted.";
 
 }, 900);
+
+/* =========================
+   SPOTIFY PLAYLIST REVEAL
+========================= */
+
+const spotifyRevealDate =
+    new Date("August 28, 2026 00:00:00").getTime();
+
+
+const spotifyPlaylistLink =
+    "https://open.spotify.com/playlist/2Xe3B93eX0cpGfoKKXd7rA?si=6rj83QGhRs6lT3cANoPHzw";
+
+
+function updateSpotifyCountdown() {
+
+    const now =
+        new Date().getTime();
+
+    const difference =
+        spotifyRevealDate - now;
+
+
+    const status =
+        document.getElementById(
+            "playlistStatus"
+        );
+
+    const message =
+        document.getElementById(
+            "playlistMessage"
+        );
+
+    const button =
+        document.getElementById(
+            "spotifyButton"
+        );
+
+    const overlay =
+        document.getElementById(
+            "playlistCoverOverlay"
+        );
+
+
+    if (difference <= 0) {
+
+        document.getElementById(
+            "playlistDays"
+        ).textContent = "00";
+
+        document.getElementById(
+            "playlistHours"
+        ).textContent = "00";
+
+        document.getElementById(
+            "playlistMinutes"
+        ).textContent = "00";
+
+        document.getElementById(
+            "playlistSeconds"
+        ).textContent = "00";
+
+
+        status.textContent =
+            "ACCESS GRANTED.";
+
+
+        message.textContent =
+            "You can listen now.";
+
+
+        button.textContent =
+            "LISTEN ON SPOTIFY →";
+
+
+        button.href =
+            spotifyPlaylistLink;
+
+
+        button.classList.remove(
+            "spotify-locked"
+        );
+
+
+        button.classList.add(
+            "spotify-unlocked"
+        );
+
+
+        overlay.style.opacity =
+            "0";
+
+
+        return;
+
+    }
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference /
+            (1000 * 60 * 60)) % 24
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference /
+            (1000 * 60)) % 60
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference / 1000) % 60
+        );
+
+
+    document.getElementById(
+        "playlistDays"
+    ).textContent =
+        String(days).padStart(2, "0");
+
+
+    document.getElementById(
+        "playlistHours"
+    ).textContent =
+        String(hours).padStart(2, "0");
+
+
+    document.getElementById(
+        "playlistMinutes"
+    ).textContent =
+        String(minutes).padStart(2, "0");
+
+
+    document.getElementById(
+        "playlistSeconds"
+    ).textContent =
+        String(seconds).padStart(2, "0");
+
+}
+
+
+setInterval(
+    updateSpotifyCountdown,
+    1000
+);
+
+
+updateSpotifyCountdown();

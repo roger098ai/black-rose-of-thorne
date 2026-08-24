@@ -1256,3 +1256,172 @@ setInterval(
 
 
 updateSpotifyCountdown();
+
+/* =========================
+   CHARACTER REVEAL
+========================= */
+
+const characterRevealDate =
+    new Date(
+        "September 2, 2026 00:00:00"
+    ).getTime();
+
+
+function updateCharacterCountdown() {
+
+    const now =
+        new Date().getTime();
+
+    const difference =
+        characterRevealDate - now;
+
+
+    if (difference <= 0) {
+
+        unlockCharacters();
+
+        return;
+
+    }
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference /
+            (1000 * 60 * 60)) % 24
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference /
+            (1000 * 60)) % 60
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference / 1000) % 60
+        );
+
+
+    document.getElementById(
+        "characterDays"
+    ).textContent =
+        String(days).padStart(2, "0");
+
+
+    document.getElementById(
+        "characterHours"
+    ).textContent =
+        String(hours).padStart(2, "0");
+
+
+    document.getElementById(
+        "characterMinutes"
+    ).textContent =
+        String(minutes).padStart(2, "0");
+
+
+    document.getElementById(
+        "characterSeconds"
+    ).textContent =
+        String(seconds).padStart(2, "0");
+
+}
+
+
+setInterval(
+    updateCharacterCountdown,
+    1000
+);
+
+
+updateCharacterCountdown();
+
+
+/* =========================
+   UNLOCK CHARACTERS
+========================= */
+
+function unlockCharacters() {
+
+    const grid =
+        document.getElementById(
+            "characterGrid"
+        );
+
+    const countdown =
+        document.getElementById(
+            "characterCountdown"
+        );
+
+    const access =
+        document.getElementById(
+            "characterAccess"
+        );
+
+    const intro =
+        document.getElementById(
+            "characterIntro"
+        );
+
+
+    grid.classList.remove(
+        "locked-characters"
+    );
+
+
+    countdown.style.display =
+        "none";
+
+
+    access.textContent =
+        "ACCESS GRANTED.";
+
+
+    intro.textContent =
+        "Four names. Four stories. None of them are innocent.";
+
+}
+
+
+/* =========================
+   FLIP CHARACTER CARDS
+========================= */
+
+document
+    .querySelectorAll(".character-card")
+    .forEach(card => {
+
+        card.addEventListener(
+            "click",
+            () => {
+
+                if (
+                    document
+                    .getElementById("characterGrid")
+                    .classList
+                    .contains("locked-characters")
+                ) {
+
+                    return;
+
+                }
+
+
+                card.classList.toggle(
+                    "flipped"
+                );
+
+            }
+        );
+
+    });
